@@ -1,0 +1,46 @@
+<ul>
+    <li><a href="/posts">All Posts</a></li>
+    <li><a href="/bookings">Bookings</a></li>
+    <li><a href = "/api">API</a></li>
+    {{#if hospital}}
+    <li><a href="/post-order">Post Order</a></li>
+    <li><a href="/orders">Received Orders</a></li>
+    {{/if}}
+    <li><a href="/logout">Logout</a></li>
+</ul>
+
+<table>
+    <thead>
+        <th>Hospital</th>
+        <th>Email</th>
+        <th>Phone</th>
+        <th>Resources</th>
+        <th>Description</th>
+        <th>Quantity</th>
+        <th>Order</th>
+    </thead>
+    <tbody>
+        {{#each data}}
+        <tr>
+            {{#each post_hospital}}
+            <td>{{this.name}}</td>
+            <td>{{this.email}}</td>
+            <td>{{this.phone}}</td>
+            {{/each}}
+            <td>{{this.resources}}</td>
+            <td>{{this.description}}</td>
+            <td>{{this.quantity}}</td>
+            <td>
+                <form action="/order-post" method="POST">
+                    <input type="hidden" name="postId" value={{this._id}}>
+                    <input type="hidden" name="total" value="{{this.quantity}}">
+                    <input type="hidden" name="resource" value="{{this.resources}}">
+                    <input type="hidden" name="description" value="{{this.description}}">
+                    <input type="number" name="quantity" max={{this.quantity}}>
+                    <button type="submit">Order</button>
+                </form>
+            </td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>

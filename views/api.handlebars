@@ -1,0 +1,22 @@
+<ul>
+    <li><a href="/posts">All Posts</a></li>
+    <li><a href="/bookings">Bookings</a></li>
+    <li><a href = "/api">API</a></li>
+    {{#if hospital}}
+    <li><a href="/post-order">Post Order</a></li>
+    <li><a href="/orders">Received Orders</a></li>
+    {{/if}}
+    <li><a href="/logout">Logout</a></li>
+</ul>
+<br/>
+<br/>
+
+<div class = "api-table">
+<p>Active Cases : {{data.activeCases}}</p>
+<p>Active New Cases : {{data.activeCasesNew}}</p>
+<p>Recovered Cases : {{data.recovered}}</p>
+<p>Recovered New Cases : {{data.recoveredNew}}</p>
+<p>Deaths : {{data.deaths}}</p>
+<p>Deaths New Cases : {{data.deathsNew}}</p>
+<p>Total cases : {{data.totalCases}}</p>
+</div>

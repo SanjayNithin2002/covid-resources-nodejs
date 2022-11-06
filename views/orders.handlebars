@@ -1,0 +1,43 @@
+<ul>
+    <li><a href="/posts">All Posts</a></li>
+    <li><a href="/bookings">Bookings</a></li>
+    <li><a href = "/api">API</a></li>
+    {{#if hospital}}
+    <li><a href="/post-order">Post Order</a></li>
+    <li><a href="/orders">Received Orders</a></li>
+    {{/if}}
+    <li><a href="/logout">Logout</a></li>
+    
+</ul>
+
+<table>
+    <thead>
+        <th>Username</th>
+        <th>Email</th>
+        <th>Phone</th>
+        <th>Resources</th>
+        <th>Description</th>
+        <th>Quantity</th>
+    </thead>
+    <tbody>
+        {{#each data}}
+        <tr>
+            {{#each order_user}}
+            <td>{{this.name}}</td>
+            <td>{{this.email}}</td>
+            <td>{{this.phone}}</td>
+            {{/each}}
+            {{#each order_hospital}}
+            <td>{{this.name}}</td>
+            <td>{{this.email}}</td>
+            <td>{{this.phone}}</td>
+            {{/each}}
+            {{#each order_post}}
+            <td>{{this.resources}}</td>
+            <td>{{this.description}}</td>
+            {{/each}}
+            <td>{{this.quantity}}</td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>

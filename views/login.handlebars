@@ -1,0 +1,14 @@
+<form action="/login" method = "post">
+    <input type="email" name="email" placeholder="Email" required>
+    <input type="password" name="password" placeholder="Password" pattern="^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=\S+$).{8,}$"  required>
+
+    <br />
+    <input type="radio" id="user" name="usertype" value="user" checked>
+    <label for="user">User</label>
+    <input type="radio" id="hospital" name="usertype" value="hospital">
+    <label for="hospital">Hospital</label>
+    <br />
+
+    <button type="submit">Login</button>
+    <br/><a href="/signup">Don't have an account? Signup</a>
+</form>
