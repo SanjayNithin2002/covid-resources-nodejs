@@ -1,16 +1,19 @@
-<ul>
-    <li><a href="/posts">All Posts</a></li>
-    <li><a href="/bookings">Bookings</a></li>
-    <li><a href = "/api">API</a></li>
-    {{#if hospital}}
-    <li><a href="/post-order">Post Order</a></li>
-    <li><a href="/orders">Received Orders</a></li>
-    {{/if}}
-    <li><a href="/logout">Logout</a></li>
-</ul>
 
-<table>
-    <thead>
+<div class="navbar">
+  <a  href="/posts"><i class="fa fa-bandcamp" aria-hidden="true"></i> All posts</a>
+  <a class="active" href="/bookings"><i class="fa fa-check-square-o" aria-hidden="true"></i> Bookings</a>
+  <a href="/api"><i class="fa fa-area-chart" aria-hidden="true"></i> Track Covid Cases</a>
+  {{#if hospital}}
+  <a href="/post-order"><i class="fa fa-plus-square" aria-hidden="true"></i> Post Order</a>
+  <a href="/orders"><i class="fa fa-book" aria-hidden="true"></i> Received Orders</a>
+  {{/if}}
+  <a href="/logout"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a>
+</div>
+<div class="div1">
+    <h2>Your Bookings</h2>
+    <h3>Here you can see the orders that you have booked</h3>
+   <table>
+    <thead class="header">
         <th>Resources</th>
         <th>Description</th>
         <th>Hospital</th>
@@ -35,3 +38,4 @@
         {{/each}}
     </tbody>
 </table>
+</div>

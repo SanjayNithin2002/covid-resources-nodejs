@@ -30,6 +30,7 @@ app.set('view engine', 'handlebars');
 app.set('views', './views');
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
+app.use(express.static('public'));
 
 //Database
 mongoose.connect("mongodb+srv://valimaiupdate:devadarshan@covid-cluster.ztg3xa8.mongodb.net/?retryWrites=true&w=majority")

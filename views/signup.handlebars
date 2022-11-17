@@ -1,22 +1,40 @@
-<form action="/signup" method="post">
-    <label for="name">Name:</label>
-    <input id="name" type="text" name="name" placeholder="Name" required>
-    <br />
+<div class="top">
+    <img src="ss.png" alt="icon" width="100px" height="100px" id="imgdiv">
+    <h1 id="h1top">Covid Defender</h1>
+</div>
+<div id="maindiv" class="box" style="height:800px">
+    <div class="form">
+        <form action="/signup" method="post">
+        <h2>Sign Up Here!</h2>
+        <div class="inputBox">
+           <input id="name" type="text" name="name" required>
+           <span>Name</span>
+           <i></i>
+        </div>
+        <div class="inputBox">
+            <input id="email" type="email" name="email"  required>
+            <span>Email</span>
+            <i></i>
+        </div>
+        <br>
+        <h3>Choose Your Account Type</h3>
+        <div class="radio-toolbar">
+            <input type="radio" id="user" name="usertype" value="user" checked onclick="userEnabled()">
+            <label for="user">User</label> &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+            <input type="radio" id="hospital" name="usertype" value="hospital" onclick="hospitalEnabled()">
+            <label for="hospital">Hospital</label>
+        </div>
 
-    <label for="email">Email:</label>
-    <input id="email" type="email" name="email" placeholder="Email" required>
-    <br />
 
-    <input type="radio" id="user" name="usertype" value="user" checked onclick="userEnabled()">
-    <label for="user">User</label>
-    <input type="radio" id="hospital" name="usertype" value="hospital" onclick="hospitalEnabled()">
-    <label for="hospital">Hospital</label>
+        
+
+    
     <br />
 
     <div id="hospitalDiv" style="display: none;">
-        <label for="inputState">State</label>
+        <label for="inputState">Select State</label> <br>
         <select class="form-control" id="inputState">
-            <option value="SelectState">Select State</option>
+            <option value="SelectState">-- Select State     --</option>
             <option value="Andra Pradesh">Andra Pradesh</option>
             <option value="Arunachal Pradesh">Arunachal Pradesh</option>
             <option value="Assam">Assam</option>
@@ -56,32 +74,35 @@
             <option value="Pondicherry">Pondicherry</option>
         </select>
         <br />
-
-        <label for="inputDistrict">District</label>
-        <select class="form-control" id="inputDistrict">
-            <option value="">-- select one -- </option>
-        </select>
-        <br />
-
-        <lablel for="pincode">Pincode:</lablel>
-        <input id="pincode" type="text" name="pincode" placeholder="Pincode" pattern="^[0-9]{6}$">
-        <br />
+        <div class="inputBox">
+            <label> Select District</label> <br>
+            <select class="form-control" id="inputDistrict">
+            <option value="">-- Select District -- </option>
+        </select> 
+        </div> <br>
+         <div class="inputBox">
+            <input id="pincode" type="text" name="pincode" pattern="^[0-9]{6}$">
+            <span>Pincode</span>
+            <i></i>
+         </div>
     </div>
-
-    <label for="phone">Phone:</label>
-    <input id="phone" type="text" name="phone" placeholder="Phone" maxlength="10" minlength="10" required>
-    <br />
-
-    <label for="password">Password:</label>
-    <input id="password" type="password" name="password" placeholder="Password"
-        pattern="^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=\S+$).{8,}$" required>
-    <br />
-
-    <button type="submit">Signup</button>
-    <br /><a href="/login">Already have an account? Login</a>
+     <div class="inputBox">
+         <input id="phone" type="text" name="phone" maxlength="10" minlength="10" required>
+         <span>Phone Number</span>
+         <i></i>
+     </div>
+     <div class="inputBox">
+         <input id="password" type="password" name="password" pattern="^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=\S+$).{8,}$" required>
+         <span>Password</span>
+         <i></i>
+     </div> <br><br>
+     <button class="btn" type="submit">Signup</button>
+     <div class="links">
+        <a href="/login">Already have an account? Login</a>
+     </div>
 </form>
-
-
+    </div>
+</div>
 
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
@@ -107,10 +128,14 @@
     function userEnabled() {
         var x = document.getElementById("hospitalDiv");
         x.style.display = "none";
+        var y = document.getElementById("maindiv");
+        y.style.height="800px";
     }
     function hospitalEnabled() {
         var x = document.getElementById("hospitalDiv");
         x.style.display = "block";
+         var y = document.getElementById("maindiv");
+        y.style.height="1100px";
     }
 </script>
 
