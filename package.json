@@ -2,7 +2,7 @@
   "name": "covid-resources-nodejs",
   "main": "app.js",
   "scripts": {
-    "start": "node app.js",
+    "start": "nodemon app.js",
     "dev": "nodemon app.js"
   },
   "dependencies": {
@@ -14,7 +14,19 @@
     "handlebars": "^4.7.7",
     "mongoose": "^6.7.1",
     "node-fetch": "^3.2.10",
-    "nodemon": "^2.0.20",
+    "nodemon": "^2.0.22",
     "path": "^0.12.7"
-  }
+  },
+  "version": "1.0.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SanjayNithin2002/covid-resources-nodejs.git"
+  },
+  "author": "SanjayNithin2002",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SanjayNithin2002/covid-resources-nodejs/issues"
+  },
+  "homepage": "https://github.com/SanjayNithin2002/covid-resources-nodejs#readme",
+  "description": ""
 }

@@ -33,7 +33,9 @@ app.use(bodyParser.json());
 app.use(express.static('public'));
 
 //Database
-mongoose.connect("mongodb+srv://valimaiupdate:devadarshan@covid-cluster.ztg3xa8.mongodb.net/?retryWrites=true&w=majority")
+mongoose.connect("mongodb+srv://coviduser:" +  process.env.MONGODB_PASS +"@cluster0.kgz6ota.mongodb.net/?retryWrites=true&w=majority", {
+    dbName : "covid"
+})
     .then(() => console.log('connected'))
     .catch(e => console.log(e));
 
