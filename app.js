@@ -12,7 +12,7 @@ var crypto = require("crypto");
 const e = require('express');
 
 var app = express();
-var port = 3000;
+var port = process.env.PORT || 3000;
 var algorithm = "sha256";
 var validatePassword = (password, hash) => {
     if (crypto.createHash(algorithm).update(password).digest('hex') == hash)
