@@ -1,5 +1,5 @@
 {
-    "env" : {
-        "MONGODB_PASS" : "devadarshan"
+    "env": {
+        "MONGO_URL": "mongodb+srv://bloguser1:bloguser1@cluster0.kgz6ota.mongodb.net/?retryWrites=true&w=majority"
     }
 }
