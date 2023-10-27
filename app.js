@@ -27,7 +27,7 @@ var hospitalID = NaN;
 //Middleware
 app.engine("handlebars", handlebars.engine);
 app.set('view engine', 'handlebars');
-app.set('views', './views');
+app.set('views', __dirname + '/views');
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(express.static('public'));
