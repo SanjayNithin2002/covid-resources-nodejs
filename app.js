@@ -30,7 +30,7 @@ app.set('view engine', 'handlebars');
 app.set('views', __dirname + '/views');
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
-app.use(express.static('public'));
+app.use(express.static(__dirname + '/public'));
 
 //Database
 mongoose.connect(process.env.MONGO_URL, {
